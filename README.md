@@ -178,27 +178,26 @@ Most ML models fail before they start because the data is messy, inconsistent, o
 Here’s how:
 
 - Dimensions enable reliable feature engineering
-  dim_customer tracks changes using SCD Type 2, which allows historical context for training
-  dim_product provides normalized product and brand information
-  dim_date makes it easy to extract temporal features like week of year or month
+  dim_customer tracks changes using SCD Type 2, which allows historical context for training.
+  dim_product provides normalized product and brand information.
+  dim_date makes it easy to extract temporal features like week of year or month.
   These dimensions are cleaned, deduplicated, and ready for use as input features.
 
 - Validated fact table ensures trustworthy labels and events
-  fact_sales_validated only includes rows that pass strict data quality rules
-  All keys are resolved, quantities are positive, and prices are properly typed
-  Each row includes a hash and batch ID for tracking and reproducibility
+  fact_sales_validated only includes rows that pass strict data quality rules.
+  All keys are resolved, quantities are positive, and prices are properly typed.
+  Each row includes a hash and batch ID for tracking and reproducibility.
   This makes it safe to use for supervised learning, aggregation, or time-series modeling.
 
 - Time-based modeling is supported by design
-  Every transaction is tied to a dim_date entry
-  You can easily slice data by order month or week for training and evaluation
-  The structure supports building time-aware models like forecasting or churn prediction
+  Every transaction is tied to a dim_date entry.
+  You can easily slice data by order month or week for training and evaluation.
+  The structure supports building time-aware models like forecasting or churn prediction.
 
 - Modular structure makes experimentation easier
-  You can use the silver layer for granular, row-level modeling
-  You can use the gold layer for pre-aggregated KPIs or features
-  The pipeline produces consistent outputs across batches, which supports repeatable experiments
-
+  You can use the silver layer for granular, row-level modeling.
+  You can use the gold layer for pre-aggregated KPIs or features.
+  The pipeline produces consistent outputs across batches, which supports repeatable experiments.
 
 ## This project shows
 
@@ -207,3 +206,9 @@ Here’s how:
 - How I build pipelines that are modular, testable, and easy to maintain
 - How I support both reporting workflows and machine learning pipelines with reliable, well-modeled inputs
 - How I prevent surprises by addressing data quality issues early and making transformations fully transparent
+
+# ✍️ Author
+I build data systems that people can trust. Not just pipelines that move rows, but processes that support decisions, analysis, and long-term reliability.
+This project shows how I think about data engineering. Clean design, clear logic, and business awareness built into every step.
+
+If you're working on something where data matters and quality cannot be an afterthought, let's connect. I'm always up for building meaningful, production-grade systems.
